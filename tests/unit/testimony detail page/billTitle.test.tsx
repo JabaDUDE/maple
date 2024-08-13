@@ -131,10 +131,10 @@ describe("BillTitle", () => {
         court: 193
       }
     })
-    render(<Provider store={store}>
+    const wrapper = render(<Provider store={store}>
       <BillTitle />
     </Provider>)
       it("should render title of bill properly", () => {
-        ///should be able to render the title of the bill correctly
+        
   })
 })
