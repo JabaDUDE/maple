@@ -83,7 +83,6 @@ const mockBill: Bill = {
 // set up Redux mock store with thunk middleware bc resolveBill is thunk
 const mockStore = configureStore([thunk])
 
-
 describe("BillTitle", () => {
   let store: ReturnType<typeof mockStore>
   const { content } = mockBill
@@ -100,23 +99,25 @@ describe("BillTitle", () => {
         showThankYou: false,
         bill: mockBill
       },
-      testimonyDetail : {
+      testimonyDetail: {
         data: {
           testimony: {
-            billTitle:"An Act to implement the recommendations of the special commission on facial recognition technology",
-            position:"endorse",
-            content:"I support S.927! It implements necessary measures to ensure privacy and prevent misuse of facial recognition technology, including requiring warrants for searches, centralizing its use at the State Police, and providing due process protections.",
+            billTitle:
+              "An Act to implement the recommendations of the special commission on facial recognition technology",
+            position: "endorse",
+            content:
+              "I support S.927! It implements necessary measures to ensure privacy and prevent misuse of facial recognition technology, including requiring warrants for searches, centralizing its use at the State Police, and providing due process protections.",
             id: "U8XW55NSyAWBoe0BgIK8u",
             draftAttachmentId: null,
-            authorRole:"user",
-            authorUid:"5kOrtIaa5XWIHd5syHWVBYhDpx53",
-            fullName:"葉歡鋒",
-            court:193,
-            attachmentId:null,
-            authorDisplayName:"葉歡鋒",
-            representativeId:"DWG1",
-            billId:"S927",
-            senatorId:"BPC0",
+            authorRole: "user",
+            authorUid: "5kOrtIaa5XWIHd5syHWVBYhDpx53",
+            fullName: "葉歡鋒",
+            court: 193,
+            attachmentId: null,
+            authorDisplayName: "葉歡鋒",
+            representativeId: "DWG1",
+            billId: "S927",
+            senatorId: "BPC0",
             publishedAt: {},
             version: 1
           },
@@ -131,10 +132,13 @@ describe("BillTitle", () => {
         court: 193
       }
     })
-    const wrapper = render(<Provider store={store}>
+  })
+  const wrapper = render(
+    <Provider store={store}>
       <BillTitle />
-    </Provider>)
-      it("should render title of bill properly", () => {
-        
+    </Provider>
+  )
+  it("should render title of bill properly", () => {
+    expect(wrapper).toBeTruthy()
   })
 })
