@@ -3,7 +3,11 @@ import { Bill, draftAttachment } from "components/db"
 import { Timestamp } from "firebase/firestore"
 import { Provider } from "react-redux"
 import configureStore from "redux-mock-store"
+<<<<<<< HEAD
 import { thunk } from "redux-thunk"
+=======
+import thunk from "redux-thunk"
+>>>>>>> 783889c43b2bcb716b69b9f9fcff027770c01dc4
 import { BillTitle } from "components/testimony/TestimonyDetailPage/BillTitle"
 
 // mock bill (later used in redux store)
@@ -132,6 +136,7 @@ describe("BillTitle", () => {
         court: 193
       }
     })
+<<<<<<< HEAD
     render(
       <Provider store={store}>
         <BillTitle />
@@ -141,5 +146,15 @@ describe("BillTitle", () => {
 
   it("should render name of user giving testimonial", () => {
     expect(screen.getByText("葉歡鋒")).toBeInTheDocument()
+=======
+  })
+  const wrapper = render(
+    <Provider store={store}>
+      <BillTitle />
+    </Provider>
+  )
+  it("should render title of bill properly", () => {
+    expect(wrapper).toBeTruthy()
+>>>>>>> 783889c43b2bcb716b69b9f9fcff027770c01dc4
   })
 })
