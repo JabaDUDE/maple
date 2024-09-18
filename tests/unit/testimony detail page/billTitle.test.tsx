@@ -6,6 +6,8 @@ import configureStore from "redux-mock-store"
 import { thunk } from "redux-thunk"
 import { BillTitle } from "components/testimony/TestimonyDetailPage/BillTitle"
 
+//TODO: think about Redux DevTools copy/paste entire raw json to test
+
 // mock bill (later used in redux store)
 const mockBill: Bill = {
   id: "A1234",
@@ -102,36 +104,60 @@ describe("BillTitle", () => {
       testimonyDetail: {
         data: {
           testimony: {
-            billTitle:
-              "An Act to implement the recommendations of the special commission on facial recognition technology",
+            representativeId: "DWG1",
+            public: true,
+            id: "U8XW55NSyAWBoe0BgIK8u",
             position: "endorse",
             content:
               "I support S.927! It implements necessary measures to ensure privacy and prevent misuse of facial recognition technology, including requiring warrants for searches, centralizing its use at the State Police, and providing due process protections.",
-            id: "U8XW55NSyAWBoe0BgIK8u",
-            draftAttachmentId: null,
-            authorRole: "user",
-            authorUid: "5kOrtIaa5XWIHd5syHWVBYhDpx53",
-            fullName: "葉歡鋒",
             court: 193,
+            authorRole: "user",
+            fullName: "葉歡鋒",
+            billTitle:
+              "An Act to implement the recommendations of the special commission on facial recognition technology",
             attachmentId: null,
             authorDisplayName: "葉歡鋒",
-            representativeId: "DWG1",
-            billId: "S927",
-            senatorId: "BPC0",
-            publishedAt: {},
+            updatedAt: {
+              seconds: 1724203235,
+              nanoseconds: 794000000
+            },
+            bill: mockBill,
+            author: null,
+            archive: [
+              {
+                authorUid: "5kOrtIaa5XWIHd5syHWVBYhDpx53",
+                billId: "S927",
+                content:
+                  "I support S.927! It implements necessary measures to ensure privacy and prevent misuse of facial recognition technology, including requiring warrants for searches, centralizing its use at the State Police, and providing due process protections.",
+                court: 193,
+                publishedAt: {
+                  seconds: 1720568067,
+                  nanoseconds: 253000000
+                },
+                senatorId: "BPC0",
+                draftAttachmentId: null,
+                attachmentId: null,
+                position: "endorse",
+                version: 1,
+                representativeId: "DWG1",
+                id: "U8XW55NSyAWBoe0BgIK8u",
+                authorDisplayName: "葉歡鋒",
+                billTitle:
+                  "An Act to implement the recommendations of the special commission on facial recognition technology",
+                authorRole: "user",
+                fullName: "葉歡鋒"
+              }
+            ],
             version: 1
           },
-          bill: null,
-          author: null,
-          archive: null,
-          version: 1
-        },
-        selectedVersion: 1,
-        authorUid: "5kOrtIaa5XWIHd5syHWVBYhDpx53",
-        billId: "S927",
-        court: 193
+          selectedVersion: 1,
+          authorUid: "5kOrtIaa5XWIHd5syHWVBYhDpx53",
+          billId: "S927",
+          court: 193
+        }
       }
     })
+
     render(
       <Provider store={store}>
         <BillTitle />
