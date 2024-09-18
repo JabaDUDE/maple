@@ -3,11 +3,7 @@ import { Bill, draftAttachment } from "components/db"
 import { Timestamp } from "firebase/firestore"
 import { Provider } from "react-redux"
 import configureStore from "redux-mock-store"
-<<<<<<< HEAD
 import { thunk } from "redux-thunk"
-=======
-import thunk from "redux-thunk"
->>>>>>> 783889c43b2bcb716b69b9f9fcff027770c01dc4
 import { BillTitle } from "components/testimony/TestimonyDetailPage/BillTitle"
 
 // mock bill (later used in redux store)
